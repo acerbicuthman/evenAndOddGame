@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: honeydew;
+        /* width: 500px; */
+        height: 100%;
+        justify-self: center;
+        justify-items: center;
+       
+    }
+    .gambody{
+        
+        justify-self: center;
+        justify-items: center;
+    }
+    input{
+        font-size: 30px;
+        margin-top: 100px;
+        border-width: 5px;
+    }
+    button{
+        background-color: darkblue;
+        color: #fff;
+        font-size: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        padding: 10px;
+
+    }
+    .Result{
+        font-size: 50px;
+        font-weight: 500px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    marquee{
+        font-size: 20px;
+        margin: 20px;
+    }
+</style>
+<body>
+    <div class="gambody">
+       
+            <div>
+                <input id="input" type="text" placeholder=" Enter a Number">
+            </div>
+            <div>
+                <button onclick="numberCheck()">Check Type of Number</button>
+            </div>
+            <div class="Result"></div>
+            <marquee behavior="-1" bgcolor="#ccccc" direction="left">This is an even and odd game </marquee>
+        
+        
+    </div>
+
+    <script>
+        function numberCheck() {
+            const input = document.getElementById("input");
+            const result = document.querySelector(".Result")
+
+            let number = parseFloat(input.value);
+
+            if(isNaN(number)) {
+                result.innerHTML = "Enter a valid Number"
+                return;
+            }
+            
+            if (number % 2 === 0){
+                result.innerHTML = number + " is an even Number"
+            }
+            else {
+                result.innerHTML = number + " is an odd number"
+            }
+            return
+            
+        }
+        
+    </script>
+</body>
+</html>
